@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* *{
+  border:2px dashed tomato;
+} */
+  
+
+/* Swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* 讀秒器 */
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #FFF;
+}
+.autoplay-progress svg {  /* 讀秒滾輪 */
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 6px;  /*圈圈的寬度*/
+  stroke: #FFF;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+
+/* Pagination 下方點點 */
+.mySwiper .swiper-pagination {
+  height: 20px;   
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  display: relative;
+  bottom:16px !important;
+}
+.mySwiper .swiper-pagination::after {  /* Pagination 背景 */
+  background:#EEE; 
+  content: "";
+  opacity: 65%;
+  z-index: -1;
+  position:absolute;
+  top: 0;
+  width: 100px !important;
+  height: 20px;
+  border-radius: 10px;
+}
+.mySwiper .swiper-pagination-bullet {  /* 每顆點點 */
+  background: #999; 
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  opacity: 100%;
+  border-radius:5px;
+}
+.mySwiper .swiper-pagination-bullet-active {  /* 啟動中的點點 */
+  width:36px;
+}
+.mySwiper .swiper-pagination-bullet-active::after {  /* 啟動中的點點 動畫 */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% * var(--progress));
+  height: 100%;
+  background: #FFF;
+}
+
+
+/* Navigation 左右按鈕 */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: #FFF; /* 更改導航按鈕顏色 */
+  margin:0 10px;
+}
+
+
+
+/* 上浮文字 */
+.clipPath{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+
+
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}

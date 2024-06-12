@@ -7,6 +7,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import { CirclePlay, CirclePause } from 'lucide-react';
+
+
 const App: React.FC = () => {
     const progressCircle = useRef<SVGSVGElement | null>(null);
 
@@ -66,8 +69,8 @@ const App: React.FC = () => {
                     <Image src="/images/4.jpg" alt="hero" fill className="opacity-80 object-cover" />
                 </SwiperSlide>
 
-                <button onClick={toggleAutoplay} className="absolute right-[50%] translate-x-[260%] bottom-[10px] scale-125 z-50 w-8 h-8">
-                    {isAutoplayRunning ? '⏸️' : '▶️'}
+                <button onClick={toggleAutoplay} className="absolute right-[50%] translate-x-[330%] bottom-[14.5px] z-50 w-6 h-6 flex justify-center items-center rounded-full bg-slate-50 opacity-60">
+                    {isAutoplayRunning ? <CirclePause className='scale-90 text-gray-600 opacity-100' /> : <CirclePlay className='scale-90 text-gray-600 opacity-100' />}
                 </button>
 
                 {/* <div className="autoplay-progress" slot="container-end" >

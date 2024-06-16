@@ -1,6 +1,5 @@
 "use client";
 
-import MegneticButton from "@/components/MegneticButton";
 import useInView from "@/hooks/useInView";
 
 export default function Home() {

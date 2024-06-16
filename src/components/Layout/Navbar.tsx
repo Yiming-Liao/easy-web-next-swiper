@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import MagneticButton from "@/components/MegneticButton"
+import TransitionLink from "../TransitionLink";
 
 const Navbar = () => {
     const [isScrollDown, setIsScrollDown] = useState(false);
@@ -46,26 +47,42 @@ const Navbar = () => {
                 <header className={`w-full fixed top-0 ${style1} ${style2} duration-200 z-50 hover:bg-white`}>
                     <div className="h-full flex justify-between items-center px-6">
                         <div className="scale-150 hover:opacity-75  active:scale-125 duration-100">
-                            <Link href="/">
+                            <TransitionLink href={"/"}>
                                 <MagneticButton maxDistance={2}>
                                     🌍
                                 </MagneticButton>
-                            </Link>
+                            </TransitionLink>
                         </div>
-                        <div>
-                            <Link href="/about">
-                                <button className="m-2 hover:text-slate-500 active:scale-90 duration-100">About</button>
-                            </Link>
-                            <Link href="/about">
-                                <button className="m-2 hover:text-slate-500 active:scale-90 duration-100">Products</button>
-                            </Link>
-                            <Link href="/about">
-                                <button className="m-2 hover:text-slate-500 active:scale-90 duration-100">News</button>
-                            </Link>
+                        <div className="flex">
+                            <TransitionLink href={"/about"}>
+                                <button className="m-2 hover:text-slate-500 active:scale-90 duration-100">
+                                    About
+                                </button>
+                            </TransitionLink>
 
-                            <Link href="/contact">
+                            <TransitionLink href={"/products"}>
+                                <button className="m-2 hover:text-slate-500 active:scale-90 duration-100">
+                                    Products
+                                </button>
+                            </TransitionLink>
+
+                            <TransitionLink href={"/news"}>
+                                <button className="w-24 h-10">
+                                    News
+                                </button>
+                            </TransitionLink>
+                            {/* <Link href="/news">
+                                <button className="m-2 hover:text-slate-500 active:scale-90 duration-100">News</button>
+                            </Link> */}
+
+                            <TransitionLink href={"/contact"}>
+                                <button className="w-24 h-10">
+                                    Contact
+                                </button>
+                            </TransitionLink>
+                            {/* <Link href="/contact">
                                 <button className="w-28 h-12 rounded-full ml-3 hover:bg-slate-200 active:scale-90 duration-100 bg-white shadow-md text-slate-800"> ✉️ Contact</button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </header>

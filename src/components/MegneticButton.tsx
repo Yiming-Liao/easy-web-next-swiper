@@ -44,7 +44,7 @@ const MegneticButton = ({ children, maxDistance = 100 }: { children: React.React
     }, { scope: ref });
 
     return (
-        <div ref={ref}>{children}</div>
+        <div ref={ref} className="cursor-pointer">{children}</div>
     );
 }
 export default MegneticButton;
